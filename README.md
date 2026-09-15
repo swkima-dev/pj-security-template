@@ -48,3 +48,8 @@ docker run --rm -p 127.0.0.1:8000:8000 security-template-demo
 `main`へのpushやPRで、シークレット検査・依存インストールとテスト・コンテナの脆弱性検査を実行します。
 Claude Security Reviewのみ、`CLAUDE_API_KEY`の登録と手動実行が必要です。
 各チェックの内容・制限は[GitHub Actionsの説明](docs/repository-setup/github-actions.md)を参照してください。
+
+## Dependabot
+
+`.github/dependabot.yml`をデフォルトブランチに反映すると、uv・Docker・GitHub Actions・pre-commitのバージョン更新PRを週1回チェックして自動作成します。
+脆弱性修正PRも自動作成するには、リポジトリの **Settings → Code security** で **Dependency graph**・**Dependabot alerts**・**Dependabot security updates** を有効にしてください。脆弱性修正は週次スケジュールとは別に実行されます。
