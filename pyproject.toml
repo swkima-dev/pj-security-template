@@ -1,0 +1,18 @@
+[project]
+name = "security-template-demo"
+version = "0.1.0"
+description = "A minimal HTTP demo for the security CI template"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8,<9"]
+
+[[tool.uv.index]]
+name = "takumi-guard"
+url = "https://pypi.flatt.tech/simple/"
+default = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
